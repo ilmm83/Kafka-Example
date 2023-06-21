@@ -15,9 +15,9 @@ public class MessageController {
     @Autowired
     private KafkaProducer kafkaProducer;
 
+
     @PostMapping
     public void sendMessage(@RequestBody MessageRequest request) {
         kafkaProducer.sendMessage(request.message());
     }
-
 }
